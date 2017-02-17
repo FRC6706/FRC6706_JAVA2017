@@ -9,17 +9,17 @@ package org.usfirst.frc.team6706.robot;
 public class RobotMap {
 	
 		// RobotDrive Motor
-		public static final int DriverFrontLeftPort = 3;
-		public static final int DriverRearLeftPort = 2;
+		public static final int DriverFrontLeftPort = 2;
+		public static final int DriverRearLeftPort = 3;
 		public static final int DriverFrontRightPort = 0;		
 		public static final int DriverRearRightPort = 1;		 
 		public static final int ClimbRopeMotor = 4; 
 		public static final int CastBallMotor = 5;
 		public static final int GetBallMotor = 6;
 		//GetBall Motor
-		public static final double GetBallMotorSpeed = 0.6;
-		public static final double CastBallMotorSpeed = 0.8;
-		public static final double ClimbRopeMotorSpeed = 1; 
+		public static final double GetBallMotorSpeed = 0.4;
+		public static final double CastBallMotorSpeed = 0.4;
+		public static final double ClimbRopeMotorSpeed = 0.4; 
 		//GetBall Button
 		public static final int CastInBall = 1;
 		public static final int StopCastBall = 2;

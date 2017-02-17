@@ -26,9 +26,16 @@ public class OI {
 	
 	public OI(){
 		
-		SmartDashboard.putData("Ball In", new CastInBallCommand());
-		SmartDashboard.putData("Ball Out", new CastOutBallCommand());
-		SmartDashboard.putData("Stop Ball", new StopCastBallCommand());
+		SmartDashboard.putData("Cast Ball In", new CastInBallCommand());
+		SmartDashboard.putData("Cast Ball Out", new CastOutBallCommand());
+		SmartDashboard.putData("Stop Cast Ball", new StopCastBallCommand());
+		
+		SmartDashboard.putData("Get Ball In", new GetInBallCommand());
+		SmartDashboard.putData("Stop Get Ball", new StopGetBallCommand());
+		
+		SmartDashboard.putData("Climb Rope Up", new ClimbRopeUpCommand());
+		SmartDashboard.putData("Climb Rope Down", new ClimbRopeDownCommand());
+		SmartDashboard.putData("Stop Climb Rope", new ClimbRopeHoldCommand());
 				
 		// GetBall buttons
 		new JoystickButton(myStick, RobotMap.GetInBall).whenPressed(new GetInBallCommand());	
