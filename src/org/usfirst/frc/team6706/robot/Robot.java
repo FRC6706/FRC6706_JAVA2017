@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team6706.robot.commands.DriveTrainCommand;
+import org.usfirst.frc.team6706.robot.commands.GyroDriveCommand;
+import org.usfirst.frc.team6706.robot.commands.MyAutoCommand1;
+import org.usfirst.frc.team6706.robot.commands.MyAutoCommand2;
 import org.usfirst.frc.team6706.robot.subsystems.CastBallSubsystem;
 import org.usfirst.frc.team6706.robot.subsystems.ClimbRopeSubsystem;
 import org.usfirst.frc.team6706.robot.subsystems.DriveTrainSubsystem;
@@ -32,7 +34,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
 	Command autonomousCommand;
-	SendableChooser<Command> chooser = new SendableChooser<>();
+	public SendableChooser<Command> autoChooser;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -41,9 +43,11 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		chooser.addDefault("Default Auto", new DriveTrainCommand());
-		// chooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", chooser);
+		autoChooser = new SendableChooser<Command>();
+		autoChooser.addDefault("My Auto 1", new MyAutoCommand1());
+		autoChooser.addObject("My Auto 2", new MyAutoCommand2());
+		autoChooser.addObject("My Auto 3", new GyroDriveCommand(0.6, 0.6));
+		SmartDashboard.putData("Auto mode", autoChooser);
 	}
 
 	/**
@@ -74,7 +78,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
+		autonomousCommand = autoChooser.getSelected();
+		autonomousCommand.start();
 
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",

@@ -1,18 +1,22 @@
 package org.usfirst.frc.team6706.robot.commands;
 
 import org.usfirst.frc.team6706.robot.Robot;
-import org.usfirst.frc.team6706.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class CastOutBallCommand extends Command {
+public class GyroDriveCommand extends Command {
 
-    public CastOutBallCommand() {
+	double leftspeed;
+	double rightspeed;
+    
+    public GyroDriveCommand(double leftspeed, double rightspeed) {
         // Use requires() here to declare subsystem dependencies
-    	requires(Robot.castball);
+    	requires(Robot.drivetrain);
+    	this.leftspeed = leftspeed;
+        this.rightspeed = rightspeed;
     }
 
     // Called just before this Command runs the first time
@@ -21,7 +25,7 @@ public class CastOutBallCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.castball.setspeed(RobotMap.CastBallMotorSpeed);
+    	Robot.drivetrain.drive(leftspeed, rightspeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -31,7 +35,7 @@ public class CastOutBallCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.castball.stop();
+    	Robot.drivetrain.stop();
     }
 
     // Called when another command which requires one or more of the same

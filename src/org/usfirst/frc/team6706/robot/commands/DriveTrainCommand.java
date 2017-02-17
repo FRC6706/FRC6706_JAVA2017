@@ -9,7 +9,6 @@ import org.usfirst.frc.team6706.robot.Robot;
  */
 public class DriveTrainCommand extends Command {
 	public DriveTrainCommand() {
-		// Use requires() here to declare subsystem dependencies
 		requires(Robot.drivetrain);
 	}
 
@@ -33,7 +32,7 @@ public class DriveTrainCommand extends Command {
 	// Called once after isFinished returns true
 	@Override
 	protected void end() {
-		Robot.drivetrain.drive(0, 0);
+		Robot.drivetrain.stop();
 	}
 
 	// Called when another command which requires one or more of the same
