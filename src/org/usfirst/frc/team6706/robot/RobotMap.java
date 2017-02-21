@@ -16,8 +16,8 @@ public class RobotMap {
 		public static final int ClimbRopeMotor = 4; 
 		public static final int CastBallMotor = 5;
 		public static final int GetBallMotor = 6;
-		//GetBall Motor Speed
-		public static final double GetBallMotorSpeed = 0.48;
+		//GetBall Motor 
+		public static final double GetBallMotorSpeed = 0.38;
 		public static final double CastBallMotorSpeed = -0.5;
 		public static final double ClimbRopeMotorSpeed = 0.8; 
 		//GetBall Button
