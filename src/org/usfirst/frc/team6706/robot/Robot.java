@@ -33,7 +33,7 @@ public class Robot extends IterativeRobot {
 	public static final ClimbRopeSubsystem climbrope = new ClimbRopeSubsystem();
 	public static OI oi;
 
-	Command autonomousCommand;
+	Command mAutonomousCommand;
 	public SendableChooser<Command> autoChooser;
 
 	/**
@@ -78,9 +78,10 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = autoChooser.getSelected();
-		autonomousCommand.start();
-
+		mAutonomousCommand = (Command) autoChooser.getSelected();
+		//mAutonomousCommand.start();
+		if (mAutonomousCommand != null)
+			mAutonomousCommand.start();
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
 		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
@@ -88,9 +89,11 @@ public class Robot extends IterativeRobot {
 		 * autonomousCommand = new ExampleCommand(); break; }
 		 */
 
+		/*
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
 			autonomousCommand.start();
+		*/
 	}
 
 	/**
@@ -107,8 +110,8 @@ public class Robot extends IterativeRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		if (autonomousCommand != null)
-			autonomousCommand.cancel();
+		if (mAutonomousCommand != null)
+			mAutonomousCommand.cancel();
 	}
 
 	/**

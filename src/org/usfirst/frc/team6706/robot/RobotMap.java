@@ -17,33 +17,22 @@ public class RobotMap {
 		public static final int CastBallMotor = 5;
 		public static final int GetBallMotor = 6;
 		//GetBall Motor
-		public static final double GetBallMotorSpeed = 0.4;
-		public static final double CastBallMotorSpeed = 0.5;
-		public static final double ClimbRopeMotorSpeed = 0.4; 
+		public static final double GetBallMotorSpeed = 0.38;
+		public static final double CastBallMotorSpeed = -0.5;
+		public static final double ClimbRopeMotorSpeed = 0.8; 
 		//GetBall Button
-		public static final int CastInBall = 12;
-		public static final int StopCastBall = 12;
-		public static final int CastOutBall = 12;
+		public static final int CastInBall = 1;
+		public static final int StopCastBall = 2;
+		public static final int CastOutBall = 3;
 		public static final int GetInBall = 5;
 		public static final int StopGetBall = 6;
 		public static final int ClimbRopeUpButton = 7;
-		public static final int ClimbRopeDownButton = 8;
-		public static final int ClimbRopeHoldButton = 11;
-		// GetBall Button Axis
-		public static final int GetBallLeftAxis = 2;
-		public static final int GetBallRightAxis = 3;
+		public static final int ClimbRopeHoldButton = 8;
 		//Drive Mode
 		public static final int DriveForward = 4;
 		public static final int DriveBack = 2;
 		public static final int DriveLeft = 1;
 		public static final int DriveRight = 3;
-		// Gyro Drive Settings
-		public static final double GyroDegreeTolerance = 3;
-		public static final double GyroDegreeReduce = 40;
-		public static final double GyroTurnSpeedMinimum = 0.3;
-		public static final double GyroTurnSpeedMaximum = 0.95;
-		public static final double GyroStraightRotateAdjust = 0.2;
-		public static final double GyroStraightRotateTolerance = 1;
 		//Autonomous 
 		public static final double SlowCrossSpeed = 0.4;
 		public static final double SlowCrossTime = 3;

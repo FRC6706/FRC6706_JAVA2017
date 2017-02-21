@@ -21,7 +21,7 @@ public class DriveTrainSubsystem extends Subsystem {
 	private SpeedController rearRightMotor = new VictorSP(RobotMap.DriverRearRightPort);
 
 	private RobotDrive drive = new RobotDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
-	private RobotDrive buttonDrive = new RobotDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
+
 
 
 	public void initDefaultCommand() {
@@ -41,13 +41,6 @@ public class DriveTrainSubsystem extends Subsystem {
 	public void drive(double left, double right) {
 		drive.tankDrive(left, right);
 	}
-	public void buttonDrive(double moveValue, double rotateValue, boolean squaredInputs) {
-		if(moveValue<0){
-			buttonDrive.arcadeDrive(-0.7, -0.7);
-		}else {
-			buttonDrive.arcadeDrive(0.7, 0.75);
-		}
-	}
 	public void tankDrive(double leftValue, double rightValue, boolean isSquareInput) {
 		drive.tankDrive(leftValue, rightValue, isSquareInput);
 	}
@@ -55,9 +48,9 @@ public class DriveTrainSubsystem extends Subsystem {
 		//drive.arcadeDrive(mStick.getThrottle()*(-0.7), mStick.getX()*(-0.7));
 		if(mStick.getRawButton(7) && mStick.getRawButton(8)){
 			drive.tankDrive(mStick.getY()*(-1.0), mStick.getThrottle()*(-1.0));
-		}else if(mStick.getRawButton(7)){
-			drive.tankDrive(mStick.getY()*(-0.9), mStick.getThrottle()*(-0.9));
 		}else if(mStick.getRawButton(8)){
+			drive.tankDrive(mStick.getY()*(-0.9), mStick.getThrottle()*(-0.9));
+		}else if(mStick.getRawButton(7)){
 			drive.tankDrive(mStick.getY()*(-0.8), mStick.getThrottle()*(-0.8));
 		}else {
 			drive.tankDrive(mStick.getY()*(-0.7), mStick.getThrottle()*(-0.7));
