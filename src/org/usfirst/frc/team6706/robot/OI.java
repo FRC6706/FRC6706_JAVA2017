@@ -9,6 +9,10 @@ import org.usfirst.frc.team6706.robot.commands.CastOutBallCommand;
 import org.usfirst.frc.team6706.robot.commands.ClimbRopeDownCommand;
 import org.usfirst.frc.team6706.robot.commands.ClimbRopeHoldCommand;
 import org.usfirst.frc.team6706.robot.commands.ClimbRopeUpCommand;
+import org.usfirst.frc.team6706.robot.commands.DriveTrainBackButtonCommand;
+import org.usfirst.frc.team6706.robot.commands.DriveTrainForwardButtonCommand;
+import org.usfirst.frc.team6706.robot.commands.DriveTrainLeftButtonCommand;
+import org.usfirst.frc.team6706.robot.commands.DriveTrainRightButtonCommand;
 import org.usfirst.frc.team6706.robot.commands.GetInBallCommand;
 import org.usfirst.frc.team6706.robot.commands.StopCastBallCommand;
 import org.usfirst.frc.team6706.robot.commands.StopGetBallCommand;
@@ -38,6 +42,11 @@ public class OI {
 		SmartDashboard.putData("Climb Rope Down", new ClimbRopeDownCommand());
 		SmartDashboard.putData("Stop Climb Rope", new ClimbRopeHoldCommand());
 
+		//Button Drive
+		new JoystickButton(myStick, RobotMap.DriveForward).whenPressed(new DriveTrainForwardButtonCommand());
+		new JoystickButton(myStick, RobotMap.DriveBack).whenPressed(new DriveTrainBackButtonCommand());
+		new JoystickButton(myStick, RobotMap.DriveLeft).whenPressed(new DriveTrainLeftButtonCommand());
+		new JoystickButton(myStick, RobotMap.DriveRight).whenPressed(new DriveTrainRightButtonCommand());
 		// GetBall buttons
 		new JoystickButton(myStick, RobotMap.GetInBall).whenPressed(new GetInBallCommand());	
 		new JoystickButton(myStick, RobotMap.StopGetBall).whenPressed(new StopGetBallCommand());	

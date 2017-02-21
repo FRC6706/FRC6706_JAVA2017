@@ -1,7 +1,7 @@
 package org.usfirst.frc.team6706.robot.subsystems;
 
 import org.usfirst.frc.team6706.robot.RobotMap;
-import org.usfirst.frc.team6706.robot.commands.DriveTrainCommand;
+import org.usfirst.frc.team6706.robot.commands.DriveTrainTankCommand;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -21,12 +21,13 @@ public class DriveTrainSubsystem extends Subsystem {
 	private SpeedController rearRightMotor = new VictorSP(RobotMap.DriverRearRightPort);
 
 	private RobotDrive drive = new RobotDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
+	private RobotDrive buttonDrive = new RobotDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
 
 
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
-		setDefaultCommand(new DriveTrainCommand());
+		setDefaultCommand(new DriveTrainTankCommand());
 	}
 	
 	/**
@@ -40,15 +41,27 @@ public class DriveTrainSubsystem extends Subsystem {
 	public void drive(double left, double right) {
 		drive.tankDrive(left, right);
 	}
-	public void arcadeDrive(double moveValue, double rotateValue) {
-		arcadeDrive(moveValue, rotateValue);
+	public void buttonDrive(double moveValue, double rotateValue, boolean squaredInputs) {
+		if(moveValue<0){
+			buttonDrive.arcadeDrive(-0.7, -0.7);
+		}else {
+			buttonDrive.arcadeDrive(0.7, 0.75);
+		}
 	}
 	public void tankDrive(double leftValue, double rightValue, boolean isSquareInput) {
 		drive.tankDrive(leftValue, rightValue, isSquareInput);
 	}
 	public void drive(Joystick mStick) {
-		//drive.tankDrive(mStick.getY()*(-0.7), mStick.getThrottle()*(-0.7));
-		drive.arcadeDrive(mStick.getThrottle()*(-0.7), mStick.getX()*(-0.7));
+		//drive.arcadeDrive(mStick.getThrottle()*(-0.7), mStick.getX()*(-0.7));
+		if(mStick.getRawButton(7) && mStick.getRawButton(8)){
+			drive.tankDrive(mStick.getY()*(-1.0), mStick.getThrottle()*(-1.0));
+		}else if(mStick.getRawButton(7)){
+			drive.tankDrive(mStick.getY()*(-0.9), mStick.getThrottle()*(-0.9));
+		}else if(mStick.getRawButton(8)){
+			drive.tankDrive(mStick.getY()*(-0.8), mStick.getThrottle()*(-0.8));
+		}else {
+			drive.tankDrive(mStick.getY()*(-0.7), mStick.getThrottle()*(-0.7));
+		}
 	}
 
 	/**

@@ -21,9 +21,9 @@ public class RobotMap {
 		public static final double CastBallMotorSpeed = 0.5;
 		public static final double ClimbRopeMotorSpeed = 0.4; 
 		//GetBall Button
-		public static final int CastInBall = 1;
-		public static final int StopCastBall = 2;
-		public static final int CastOutBall = 3;
+		public static final int CastInBall = 12;
+		public static final int StopCastBall = 12;
+		public static final int CastOutBall = 12;
 		public static final int GetInBall = 5;
 		public static final int StopGetBall = 6;
 		public static final int ClimbRopeUpButton = 7;
@@ -33,9 +33,10 @@ public class RobotMap {
 		public static final int GetBallLeftAxis = 2;
 		public static final int GetBallRightAxis = 3;
 		//Drive Mode
-		public static final int SlowCross = 5;
-		public static final int FastCross = 6;
-		public static final int DriveStraight = 4;
+		public static final int DriveForward = 4;
+		public static final int DriveBack = 2;
+		public static final int DriveLeft = 1;
+		public static final int DriveRight = 3;
 		// Gyro Drive Settings
 		public static final double GyroDegreeTolerance = 3;
 		public static final double GyroDegreeReduce = 40;

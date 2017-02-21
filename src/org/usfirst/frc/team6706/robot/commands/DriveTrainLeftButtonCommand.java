@@ -7,8 +7,8 @@ import org.usfirst.frc.team6706.robot.Robot;
 /**
  *
  */
-public class DriveTrainCommand extends Command {
-	public DriveTrainCommand() {
+public class DriveTrainLeftButtonCommand extends Command {
+	public DriveTrainLeftButtonCommand() {
 		requires(Robot.drivetrain);
 	}
 
@@ -20,7 +20,7 @@ public class DriveTrainCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.drivetrain.drive(Robot.oi.getJoystick());
+		Robot.drivetrain.drive(-0.6, 0.6);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
