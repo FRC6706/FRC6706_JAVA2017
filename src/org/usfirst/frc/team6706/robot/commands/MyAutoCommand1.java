@@ -10,9 +10,19 @@ public class MyAutoCommand1 extends CommandGroup {
     public MyAutoCommand1() {
         // Add Commands here:
     	addSequential(new GyroDriveCommand(0.646, 0.605), 1);  //2.47m
-    	addSequential(new GyroDriveCommand(0.4, 0.605), 0.5);
+    	addSequential(new GyroDriveCommand(0.4, 0.605), 0.5);  //45D
     	addParallel(new GetInBallCommand(), 10);
         addSequential(new CastOutBallCommand(), 10);
+        /*
+         addSequential(new GyroDriveCommand(0.646, 0.605), 1);  //2.47m
+    	 addSequential(new GyroDriveCommand(0.4, 0.605), 0.5);  //45D
+        * /
+        
+        
+        
+         * 
+         */
+        
         // these will run in order.
 
         // To run multiple commands at the same time,
