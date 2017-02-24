@@ -33,6 +33,8 @@ public class RobotMap {
 		public static final int DriveBack = 2;
 		public static final int DriveLeft = 1;
 		public static final int DriveRight = 3;
+		public static final int TurnLeft = 11;
+		public static final int TurnRight = 12;
 		//Autonomous 
 		public static final double SlowCrossSpeed = 0.4;
 		public static final double SlowCrossTime = 3;
