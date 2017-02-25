@@ -22,7 +22,7 @@ public class DriveTrainSubsystem extends Subsystem {
 
 	private RobotDrive drive = new RobotDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
 
-
+	
 
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
@@ -46,13 +46,23 @@ public class DriveTrainSubsystem extends Subsystem {
 	}
 	public void drive(Joystick mStick) {
 		//drive.arcadeDrive(mStick.getThrottle()*(-0.7), mStick.getX()*(-0.7));
+		//
 		if(mStick.getRawButton(7) && mStick.getRawButton(8)){
 			drive.tankDrive(mStick.getY()*(-1.0), mStick.getThrottle()*(-1.0));
 		}else if(mStick.getRawButton(8)){
 			drive.tankDrive(mStick.getY()*(-0.9), mStick.getThrottle()*(-0.9));
 		}else if(mStick.getRawButton(7)){
 			drive.tankDrive(mStick.getY()*(-0.8), mStick.getThrottle()*(-0.8));
-		}else {
+		}else if(mStick.getRawButton(5) && mStick.getRawButton(6)){
+			drive.tankDrive(mStick.getY()*(-0.4), mStick.getThrottle()*(-0.4));
+		}
+		else if(mStick.getRawButton(5)){
+			drive.tankDrive(mStick.getY()*(-0.6), mStick.getThrottle()*(-0.6));
+		}
+		else if(mStick.getRawButton(6)){
+			drive.tankDrive(mStick.getY()*(-0.5), mStick.getThrottle()*(-0.5));
+		}
+		else {
 			drive.tankDrive(mStick.getY()*(-0.7), mStick.getThrottle()*(-0.7));
 		}
 	}

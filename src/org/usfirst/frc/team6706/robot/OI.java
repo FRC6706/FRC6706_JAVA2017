@@ -12,6 +12,8 @@ import org.usfirst.frc.team6706.robot.commands.DriveTrainBackButtonCommand;
 import org.usfirst.frc.team6706.robot.commands.DriveTrainForwardButtonCommand;
 import org.usfirst.frc.team6706.robot.commands.DriveTrainLeftButtonCommand;
 import org.usfirst.frc.team6706.robot.commands.DriveTrainRightButtonCommand;
+import org.usfirst.frc.team6706.robot.commands.DriveTrainTurnLeft;
+import org.usfirst.frc.team6706.robot.commands.DriveTrainTurnRight;
 import org.usfirst.frc.team6706.robot.commands.GetInBallCommand;
 import org.usfirst.frc.team6706.robot.commands.StopCastBallCommand;
 import org.usfirst.frc.team6706.robot.commands.StopGetBallCommand;
@@ -46,6 +48,8 @@ public class OI {
 		new JoystickButton(myStick, RobotMap.DriveBack).whileHeld(new DriveTrainBackButtonCommand());
 		new JoystickButton(myStick, RobotMap.DriveLeft).whileHeld(new DriveTrainLeftButtonCommand());
 		new JoystickButton(myStick, RobotMap.DriveRight).whileHeld(new DriveTrainRightButtonCommand());
+		new JoystickButton(myStick, RobotMap.TurnLeft).whenPressed(new DriveTrainTurnLeft());//need test
+		new JoystickButton(myStick, RobotMap.TurnRight).whenPressed(new DriveTrainTurnRight());//need test
 		// GetBall buttons
 		new JoystickButton(myRobotStick, RobotMap.GetInBall).whenPressed(new GetInBallCommand());	
 		new JoystickButton(myRobotStick, RobotMap.StopGetBall).whenPressed(new StopGetBallCommand());	
