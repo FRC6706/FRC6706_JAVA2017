@@ -48,8 +48,8 @@ public class OI {
 		new JoystickButton(myStick, RobotMap.DriveBack).whileHeld(new DriveTrainBackButtonCommand());
 		new JoystickButton(myStick, RobotMap.DriveLeft).whileHeld(new DriveTrainLeftButtonCommand());
 		new JoystickButton(myStick, RobotMap.DriveRight).whileHeld(new DriveTrainRightButtonCommand());
-		new JoystickButton(myStick, RobotMap.TurnLeft).whileHeld(new DriveTrainTurnLeft());//need test
-		new JoystickButton(myStick, RobotMap.TurnRight).whileHeld(new DriveTrainTurnRight());//need test
+		new JoystickButton(myStick, RobotMap.TurnLeft).whenPressed(new DriveTrainTurnLeft());//need test
+		new JoystickButton(myStick, RobotMap.TurnRight).whenPressed(new DriveTrainTurnRight());//need test
 		// GetBall buttons
 		new JoystickButton(myRobotStick, RobotMap.GetInBall).whenPressed(new GetInBallCommand());	
 		new JoystickButton(myRobotStick, RobotMap.StopGetBall).whenPressed(new StopGetBallCommand());	
