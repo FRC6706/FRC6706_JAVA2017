@@ -16,6 +16,7 @@ import org.usfirst.frc.team6706.robot.subsystems.ClimbRopeSubsystem;
 import org.usfirst.frc.team6706.robot.subsystems.DriveTrainSubsystem;
 import org.usfirst.frc.team6706.robot.subsystems.GetBallSubsystem;
 import org.usfirst.frc.team6706.robot.subsystems.VisionSubsystem;
+import org.usfirst.frc.team6706.robot.subsystems.VisionSubsystem2;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,6 +31,7 @@ public class Robot extends IterativeRobot {
 	public static final GetBallSubsystem getball = new GetBallSubsystem();
 	public static final CastBallSubsystem castball = new CastBallSubsystem();
 	public static final VisionSubsystem vision = new VisionSubsystem();
+	public static final VisionSubsystem2 vision2 = new VisionSubsystem2();
 	public static final ClimbRopeSubsystem climbrope = new ClimbRopeSubsystem();
 	public static OI oi;
 
