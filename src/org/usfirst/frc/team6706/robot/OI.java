@@ -8,6 +8,7 @@ import org.usfirst.frc.team6706.robot.commands.CastInBallCommand;
 import org.usfirst.frc.team6706.robot.commands.CastOutBallCommand;
 import org.usfirst.frc.team6706.robot.commands.ClimbRopeHoldCommand;
 import org.usfirst.frc.team6706.robot.commands.ClimbRopeUpCommand;
+import org.usfirst.frc.team6706.robot.commands.ClimbRopeUpCommand2;
 import org.usfirst.frc.team6706.robot.commands.DriveTrainBackButtonCommand;
 import org.usfirst.frc.team6706.robot.commands.DriveTrainForwardButtonCommand;
 import org.usfirst.frc.team6706.robot.commands.DriveTrainLeftButtonCommand;
@@ -59,6 +60,7 @@ public class OI {
 		new JoystickButton(myRobotStick, RobotMap.StopCastBall).whenPressed(new StopCastBallCommand());
 		// CastBall buttons
 		new JoystickButton(myRobotStick, RobotMap.ClimbRopeUpButton).whenPressed(new ClimbRopeUpCommand());
+		new JoystickButton(myRobotStick, RobotMap.ClimbRopeUpButton2).whenPressed(new ClimbRopeUpCommand2());
 		new JoystickButton(myRobotStick, RobotMap.ClimbRopeHoldButton).whenPressed(new ClimbRopeHoldCommand());
 	}
 	//// CREATING BUTTONS

@@ -20,6 +20,7 @@ public class RobotMap {
 		public static final double GetBallMotorSpeed = 0.38;
 		public static final double CastBallMotorSpeed = -0.5;
 		public static final double ClimbRopeMotorSpeed = 0.8; 
+		public static final double ClimbRopeMotorSpeed2 = 1.0;
 		//GetBall Button
 		public static final int CastInBall = 1;
 		public static final int StopCastBall = 2;
@@ -27,6 +28,7 @@ public class RobotMap {
 		public static final int GetInBall = 5;
 		public static final int StopGetBall = 6;
 		public static final int ClimbRopeUpButton = 7;
+		public static final int ClimbRopeUpButton2 = 9;
 		public static final int ClimbRopeHoldButton = 8;
 		//Drive Mode
 		public static final int DriveForward = 4;
