@@ -47,8 +47,8 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		autoChooser = new SendableChooser<Command>();
 		autoChooser.addDefault("My Auto 1", new MyAutoCommand1());
-		autoChooser.addObject("My Auto 2", new MyAutoCommand2());
-		autoChooser.addObject("My Auto 3", new GyroDriveCommand(0.6, 0.6));
+		//autoChooser.addObject("My Auto 2", new MyAutoCommand2());
+		//autoChooser.addObject("My Auto 3", new GyroDriveCommand(0.6, 0.6));
 		SmartDashboard.putData("Auto mode", autoChooser);
 	}
 

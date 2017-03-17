@@ -62,6 +62,9 @@ public class OI {
 		new JoystickButton(myRobotStick, RobotMap.ClimbRopeUpButton).whenPressed(new ClimbRopeUpCommand());
 		new JoystickButton(myRobotStick, RobotMap.ClimbRopeUpButton2).whenPressed(new ClimbRopeUpCommand2());
 		new JoystickButton(myRobotStick, RobotMap.ClimbRopeHoldButton).whenPressed(new ClimbRopeHoldCommand());
+		new JoystickButton(myStick, RobotMap.ClimbRopeUp2).whenPressed(new ClimbRopeUpCommand());
+		new JoystickButton(myStick, RobotMap.ClimbRopeHold2).whenPressed(new ClimbRopeHoldCommand());
+		
 	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a

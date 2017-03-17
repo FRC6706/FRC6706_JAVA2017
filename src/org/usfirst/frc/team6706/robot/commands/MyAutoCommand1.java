@@ -9,10 +9,11 @@ public class MyAutoCommand1 extends CommandGroup {
 
     public MyAutoCommand1() {
         // Add Commands here:
-    	addSequential(new GyroDriveCommand(0.646, 0.605), 1);  //2.47m
-    	addSequential(new GyroDriveCommand(0.4, 0.605), 0.5);  //45D
-    	addParallel(new GetInBallCommand(), 10);
-        addSequential(new CastOutBallCommand(), 10);
+    	
+    	addSequential(new GyroDriveCommand(0.66 * 0.8, 0.62 * 0.8), 7);  //1s 20cm red
+    	//addSequential(new GyroDriveCommand(0.646, 0.605), 1);  //2.47m
+    	//addSequential(new GyroDriveCommand(0.4, 0.605), 0.5);  //45D
+
         /*
          addSequential(new GyroDriveCommand(0.646, 0.605), 1);  //2.47m
     	 addSequential(new GyroDriveCommand(0.4, 0.605), 0.5);  //45D

@@ -30,6 +30,8 @@ public class RobotMap {
 		public static final int ClimbRopeUpButton = 7;
 		public static final int ClimbRopeUpButton2 = 9;
 		public static final int ClimbRopeHoldButton = 8;
+		public static final int ClimbRopeUp2 = 9;
+		public static final int ClimbRopeHold2 = 10;
 		//Drive Mode
 		public static final int DriveForward = 4;
 		public static final int DriveBack = 2;

@@ -9,7 +9,9 @@ public class ReachBaseLine extends CommandGroup {
 
     public ReachBaseLine() {
     	
-    	addSequential(new GyroDriveCommand(0.646 * 0.65, 0.605 * 0.65), 4.2); 
+    	//addSequential(new GyroDriveCommand(0.646 * 0.65, 0.605 * 0.65), 4.2); 
+    	addSequential(new GyroDriveCommand(0.646 * 0.65, 0.605 * 0.65), 1);
+    	
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

@@ -20,7 +20,7 @@ public class DriveTrainForwardButtonCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.drivetrain.drive(0.646, 0.605);
+		Robot.drivetrain.drive(0.646 * 0.7, 0.605 * 0.7);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
